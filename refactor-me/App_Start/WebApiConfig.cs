@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 
+
 namespace refactor_me
 {
     public static class WebApiConfig
@@ -18,6 +19,12 @@ namespace refactor_me
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+            );
+
+              config.Routes.MapHttpRoute(
+                name: "DefaultApi2",
+                routeTemplate: "api/products/{id}/{controller}/{id1}",
+                defaults: new { id1 = RouteParameter.Optional }
             );
         }
     }
